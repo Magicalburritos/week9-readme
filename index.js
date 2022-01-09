@@ -1,10 +1,16 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./Develop/utils/generateMarkdown')
 // TODO: Create an array of questions for user input
-const questions = [
-    {
-        return inquirer.prompt([
+const promptQuestions = portfolioData => {
+
+if (!portfolioData) {
+    portfolioData= [
+      
+    ];
+  }
+  return inquirer.prompt([          
          {
       type: 'input',
       name: 'github',
@@ -80,14 +86,22 @@ const questions = [
         message: "Choose a license for your project.",
         choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
         name: 'license'
-    }
-     ]   
+    },
+        ])  
+  .then(projectData => {
+      portfolioData.push(projectData);
+      if (projectData.confirmAddProject) {
+        return promptProject(portfolioData);
+      } else {
+        return portfolioData;
+      }
+    });
 }
-];
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-     fs.writeFile(fileName, data, err => {
+function writeToFile(data) {
+     fs.writeFile('README.MD',data, err => {
         if (err) {
           return console.log(err);
         }
@@ -97,7 +111,12 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+// function init() {
+//   promptQuestions()
+//   .then(console.log(portfolioData))
+// }
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();
+promptQuestions()
+  .then((portfolioData) => console.log(portfolioData))
