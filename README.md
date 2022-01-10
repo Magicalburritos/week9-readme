@@ -34,6 +34,8 @@ after answering all the prompts to generate the READEME which will be called REA
 
 ## usage
 
+will help to provide you with a easy to make readme
+
 ## license
 
 MIT
