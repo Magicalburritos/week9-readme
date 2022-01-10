@@ -1,36 +1,32 @@
-# slkdfjhn
 
+
+  # readme generator
+
+  ![GitHub](https://img.shields.io/github/license/Magicalburritos/week9-readme)
+  
 ## Description
 
-Hey welcome to my project help produce a quality README with information about the app you created!
-this is a command-line application the runs with Node.js that generates a README file based on the information you tell it about your project.
-q;iowretjh
+testing
 
 ## table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
 ## installation
 
 ```
-npm install && node index.js
+
 ```
 
 ## usage
 
-jklsdnfgb
-asfdgbnadfh;bkgjn
-adfghlkjandfgb
-
+ 
+ 
 ## license
-
-Boost Software License 1.0
-[![MIT License][license-badge]][license]
+[object Object]
 
 ## Questions
-
-GitHub:a;dlfknjhg
-Email:lakdjfnba
+GitHub:Magicalburritos
+Email:hudakjoe@msn.com

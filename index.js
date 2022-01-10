@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./Develop/utils/generateMarkdown');
+const writeToFile = require('./Develop/utils/writeToFile');
 // TODO: Create an array of questions for user input
 const promptQuestions = (portfolioData) => {
   if (!portfolioData) {
@@ -18,6 +19,19 @@ const promptQuestions = (portfolioData) => {
             return true;
           } else {
             console.log('Please enter your GitHub Username!');
+            return false;
+          }
+        },
+      },
+      {
+        type: 'input',
+        name: 'repo',
+        message: 'Enter your GitHub Repo name (Required)',
+        validate: (nameInput) => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log('Please enter your GitHub Repo name!');
             return false;
           }
         },
@@ -80,16 +94,16 @@ const promptQuestions = (portfolioData) => {
         type: 'list',
         message: 'Choose a license for your project.',
         choices: [
-          'GNU AGPLv3',
-          'GNU GPLv3',
-          'GNU LGPLv3',
-          'Mozilla Public License 2.0',
-          'Apache License 2.0',
-          'MIT License',
-          'Boost Software License 1.0',
-          'The Unlicense',
+          'GNU-AGPLv3',
+          'GNU-GPLv3',
+          'GNU-LGPLv3',
+          'Mozilla-Public-2.0',
+          'Apache-2.0',
+          'MIT',
+          'Boost Software 1.0',
+          'The-Unlicense',
         ],
-        name: 'license',
+        name: 'licenses',
       },
     ])
     .then((projectData) => {
@@ -102,29 +116,10 @@ const promptQuestions = (portfolioData) => {
     });
 };
 
-// TODO: Create a function to write README file
-function writeToFile(data) {
-  fs.writeFile('README.MD', data, (err) => {
-    if (err) {
-      return console.log(err);
-    }
-
-    console.log('Success! Your README.md file has been generated');
-  });
-}
-
-// TODO: Create a function to initialize app
-// function init() {
-//   promptQuestions()
-//   .then(console.log(portfolioData))
-// }
-
-// // Function call to initialize app
-// init();
 promptQuestions()
   .then((portfolioData) => {
     return generateMarkdown(portfolioData);
   })
   .then((data) => {
-    return writeToFile(data);
+    return writeToFile('./README.MD', data);
   });

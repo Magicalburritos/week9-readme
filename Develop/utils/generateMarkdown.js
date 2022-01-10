@@ -1,36 +1,46 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 
-const inquirer = require('inquirer');
-
+const license = require('license');
+const writeToFile = require('./writeToFile');
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(github, repo) {
+  return `
+  ![GitHub](https://img.shields.io/github/license/${github}/${repo})
+  `;
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(licenses, github) {
+  const currentYear = new Date().getFullYear();
+  const licenseFile = license.getLicense(licenses, {
+    Author: github,
+    date: currentYear,
+  });
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+  writeToFile('./LICENSE', licenseFile);
+}
 
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) => {
   console.log(data);
   const {
     github,
+    repo,
     title,
     description,
     installation,
     usage,
     contributing,
     tests,
-    license,
+    licenses,
     email,
   } = data;
+  renderLicenseLink(licenses, github);
   return `
 
   # ${title}
-
+${renderLicenseBadge(github, repo)}
 ## Description
 
 ${description}

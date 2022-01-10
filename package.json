@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "license": "^1.0.3"
   },
   "name": "week9-readme",
   "description": "[How to create a Professional README](./readme-guide.md)",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
