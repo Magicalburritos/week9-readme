@@ -17,7 +17,7 @@ testing
 ## installation
 
 ```
-
+test
 ```
 
 ## usage
@@ -25,7 +25,7 @@ testing
  
  
 ## license
-[object Object]
+MIT
 
 ## Questions
 GitHub:Magicalburritos

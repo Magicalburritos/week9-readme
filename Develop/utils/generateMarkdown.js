@@ -14,8 +14,8 @@ function renderLicenseBadge(github, repo) {
 function renderLicenseLink(licenses, github) {
   const currentYear = new Date().getFullYear();
   const licenseFile = license.getLicense(licenses, {
-    Author: github,
-    date: currentYear,
+    Author: github.toString(),
+    date: currentYear.toString(),
   });
 
   writeToFile('./LICENSE', licenseFile);
@@ -62,7 +62,7 @@ ${usage}
  ${tests}
  ${contributing}
 ## license
-${license}
+${licenses}
 
 ## Questions
 GitHub:${github}
