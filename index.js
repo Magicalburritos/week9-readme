@@ -24,18 +24,6 @@ const promptQuestions = (portfolioData) => {
       },
       {
         type: 'input',
-        message: 'What is the name of your GitHub repo?',
-        name: 'repo',
-        default: 'readme-generator',
-        validate: function (answer) {
-          if (answer.length < 1) {
-            return console.log('Valid GitHub repo required for a badge.');
-          }
-          return true;
-        },
-      },
-      {
-        type: 'input',
         message: 'What is the title of your project?',
         name: 'title',
         default: 'Project Title',
@@ -82,6 +70,11 @@ const promptQuestions = (portfolioData) => {
         message:
           'If applicable, provide any tests written for your application and provide examples on how to run them.',
         name: 'tests',
+      },
+      {
+        type: 'input',
+        message: 'Please provide a email if anyone has any question.',
+        name: 'email',
       },
       {
         type: 'list',
