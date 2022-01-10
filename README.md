@@ -17,6 +17,7 @@ this is a command-line application the runs with Node.js that generates a README
 ## installation
 
 ![Gif demo of README-generator](readme-demo.gif)
+see sample for what yours could look like!
 
 To create you own README lets frist start by getting npm up and running use
 \`\`\`
