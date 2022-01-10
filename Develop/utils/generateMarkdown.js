@@ -32,8 +32,7 @@ const generateMarkdown = (data) => {
   # ${title}
 
 ## Description
-Hey welcome to my project help produce a quality README with information about the app you created!
-this is a command-line application the runs with Node.js that generates a README file based on the information you tell it about your project.
+
 ${description}
 
 ## table of Contents
@@ -85,3 +84,6 @@ module.exports = generateMarkdown;
 // {renderLicenseBadge(license)}
 // {renderLicenseLink(license)}
 // {renderLicenseSection(license)}
+
+// Hey welcome to my project help produce a quality README with information about the app you created!
+// this is a command-line application the runs with Node.js that generates a README file based on the information you tell it about your project.
