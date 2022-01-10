@@ -29,36 +29,33 @@ const generateMarkdown = (data) => {
   } = data;
   return `
 
-  #${title}
-// {renderLicenseBadge(license)}
-// {renderLicenseLink(license)}
-// {renderLicenseSection(license)}
-#Description
+  # ${title}
+
+## Description
 Hey welcome to my project help produce a quality README with information about the app you created!
 this is a command-line application the runs with Node.js that generates a README file based on the information you tell it about your project.
 ${description}
 
-#table of Contents
+## table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
 
-#installation
-To create you own README lets frist start by getting npm up and running use \`\`\`npm install\`\`\` in the command line.
- then download \`\`\`inquirer\`\`\` which is used to get inputs from the command line in the forms of prompts
- after you have installed those to start the application in the command line type \`\`\`node index.js\`\`\` in the command line
- after answering all the prompts 
-#${installation}
+## installation
 
-#usage
+\`\`\`
+${installation}
+\`\`\`
+
+## usage
 ${usage}
  ${tests}
  ${contributing}
-#license
+## license
 ${license}
 
-#Questions
+## Questions
 GitHub:${github}
 Email:${email}
 `;
@@ -71,3 +68,20 @@ module.exports = generateMarkdown;
 // lice
 // questions? github name github profile email adress
 //table of contents
+// To create you own README lets frist start by getting npm up and running use
+//  \`\`\`
+//  npm install
+//  \`\`\`
+//  in the command line.
+//  then download
+//  \`\`\`
+//  inquirer
+//  \`\`\`
+//  which is used to get inputs from the command line in the forms of prompts
+//   you have installed those to start the application
+//   in the command line type \`\`\`node index.js\`\`\` in the command line
+//  after answering all the prompts to generate the READEME which will be called README.MD in the root.
+
+// {renderLicenseBadge(license)}
+// {renderLicenseLink(license)}
+// {renderLicenseSection(license)}
